@@ -7,11 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace Sudoku
 {
-    public partial class Contact : Page
+    public partial class Custom : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btn_Clicked(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this, GetType(), "key2", "alert('hello')", true);
         }
     }
 }
