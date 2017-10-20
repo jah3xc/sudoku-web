@@ -11,12 +11,21 @@ namespace Sudoku
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ScriptManager.RegisterStartupScript(this, GetType(), "key2", "alert('hello')", true);
+            Button btn_sender = (Button)sender;
+            if (btn_sender.ID == "submitButton")
+            {
+                //do stuff
+            }
         }
 
-        protected void btn_Clicked(object sender, EventArgs e)
+        protected void submitButton_Click(object sender, EventArgs e)
         {
             ScriptManager.RegisterStartupScript(this, GetType(), "key2", "alert('hello')", true);
+
         }
+
     }
+
+
 }
