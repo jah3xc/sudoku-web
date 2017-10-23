@@ -11,12 +11,13 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="Scripts/script.js"></script>
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     
 </head>
-<body>
+<body ng-app="Sudoku">
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>

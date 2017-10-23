@@ -7,16 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Sudoku
 {
-    public partial class Custom : Page
+    public partial class CustomResults : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Redirect("Stored.aspx");
+
         }
-
-        
-
     }
-
-
 }
