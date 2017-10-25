@@ -15,20 +15,26 @@
                 isempty = false;
                 String columnStr = Request.Params[num].ToString();
                 String[] columnArr = columnStr.Split(new char[',']);
-                for(var j = 0; j < 9; j++)
+                for (var j = 0; j < 9; j++)
                 {
-                    if (columnArr[j].Length > 0)
+                    try
                     {
-                        int value = Convert.ToInt32(columnArr[j]);
-                        puzzle[j, i] = value;
+                        if (columnArr[j].Length > 0)
+                        {
+
+                            int value = Convert.ToInt32(columnArr[j]);
+                            puzzle[j, i] = value;
+                        }
+                        else
+                        {
+                            puzzle[j, i] = -1;
+                        }
                     }
-                    else
+                    catch (Exception)
                     {
                         puzzle[j, i] = -1;
                     }
                 }
-
-
             }
             else
             {
@@ -37,6 +43,8 @@
                     puzzle[j, i] = -1;
                 }
             }
+
+
         }
 
         if(!isempty)
@@ -44,7 +52,11 @@
             Session["puzzle"] = puzzle;
             Response.Redirect("/");
         }
+
+
     }
+
+
 
 </script>
 
