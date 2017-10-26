@@ -9,5 +9,5 @@
 
 
 
-public partial class Stored {
+public partial class  Stored {
 }
