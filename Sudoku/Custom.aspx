@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Custom Puzzles" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Custom.aspx.cs" Inherits="Custom" %>
+﻿<%@ Page Title="Custom Puzzles" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" %>
 
 <script runat="server">
     protected String message;
@@ -27,12 +27,12 @@
                         }
                         else
                         {
-                            puzzle[j, i] = -1;
+                            puzzle[j, i] = 0;
                         }
                     }
                     catch (Exception)
                     {
-                        puzzle[j, i] = -1;
+                        puzzle[j, i] = 0;
                     }
                 }
             }
@@ -40,7 +40,7 @@
             {
                 for(var j =0; j < 9; j++)
                 {
-                    puzzle[j, i] = -1;
+                    puzzle[j, i] = 0;
                 }
             }
 
@@ -50,7 +50,7 @@
         if(!isempty)
         {
             Session["puzzle"] = puzzle;
-            Response.Redirect("/");
+            Response.Redirect("Results");
         }
 
 

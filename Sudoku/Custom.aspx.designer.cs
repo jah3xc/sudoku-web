@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-    public partial class Custom : Page
+    public class Custom : Page
     {
 
     }

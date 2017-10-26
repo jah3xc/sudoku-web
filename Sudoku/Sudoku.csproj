@@ -128,6 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CustomResults.aspx" />
+    <Content Include="Results.aspx" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
@@ -192,6 +193,13 @@
     <Compile Include="CustomResults.aspx.designer.cs">
       <DependentUpon>CustomResults.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Results.aspx.cs">
+      <DependentUpon>Results.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Results.aspx.designer.cs">
+      <DependentUpon>Results.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Stored.aspx.cs">
       <DependentUpon>Stored.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -204,9 +212,9 @@
       <DependentUpon>Custom.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Custom.aspx.designer.cs">
+    <None Include="Custom.aspx.designer.cs">
       <DependentUpon>Custom.aspx</DependentUpon>
-    </Compile>
+    </None>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
