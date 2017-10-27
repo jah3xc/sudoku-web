@@ -3,10 +3,11 @@
     protected bool noloadedpuzzle = false;
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+
         if (Session["puzzle"] != null)
         {
-
+            int[,] pz = (int[,]) Session["puzzle"];
+            CS4750HW6.GameBoard gb = new CS4750HW6.GameBoard(pz);
         }
         else if(Session["stored_puzzle"] != null)
         {

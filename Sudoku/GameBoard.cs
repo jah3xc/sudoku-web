@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CS4750HW6
 {
-    class GameBoard
+    public class GameBoard
     {
         /***************ATTRIBUTES***************/
         //Fields
