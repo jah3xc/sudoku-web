@@ -22,7 +22,7 @@
 <div class="container">
     <h1 class="text-center">Results</h1>
     <% if (noloadedpuzzle) { %>
-        <div class="alert alert-warning">
+        <div class="alert alert-danger">
             <h1>No puzzle has been loaded!</h1>
             <div>
                  Please visit one of the following pages to load a puzzle: 
