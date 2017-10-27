@@ -130,6 +130,7 @@
     <Content Include="a.PNG" />
     <Content Include="b.PNG" />
     <Content Include="c.PNG" />
+    <Content Include="CS4750HW6.csproj" />
     <Content Include="CustomResults.aspx" />
     <Content Include="Results.aspx" />
     <Content Include="Scripts\angular-mocks.js" />
@@ -152,6 +153,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="App.config" />
     <None Include="Properties\PublishProfiles\Sudoku1 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -190,6 +192,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Column.cs" />
     <Compile Include="CustomResults.aspx.cs">
       <DependentUpon>CustomResults.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -197,13 +200,21 @@
     <Compile Include="CustomResults.aspx.designer.cs">
       <DependentUpon>CustomResults.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Form1.cs" />
+    <Compile Include="Form1.Designer.cs" />
+    <Compile Include="GameBoard.cs" />
+    <Compile Include="Group.cs" />
+    <Compile Include="Move.cs" />
+    <Compile Include="Node.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Results.aspx.cs">
       <DependentUpon>Results.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Results.aspx.designer.cs">
       <DependentUpon>Results.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Row.cs" />
+    <Compile Include="Square.cs" />
     <Compile Include="Stored.aspx.cs">
       <DependentUpon>Stored.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -214,7 +225,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Custom.aspx.cs">
       <DependentUpon>Custom.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <None Include="Custom.aspx.designer.cs">
       <DependentUpon>Custom.aspx</DependentUpon>
@@ -264,6 +274,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
