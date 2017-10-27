@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CS4750HW6
 {
-    class Node
+    public class Node
     {
         /***************ATTRIBUTES***************/
         //Fields

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Custom Puzzles" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" %>
+﻿    <%@ Page Title="Custom Puzzles" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" %>
 
 <script runat="server">
     protected String message;

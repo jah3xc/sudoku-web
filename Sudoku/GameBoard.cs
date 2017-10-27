@@ -13,7 +13,7 @@ namespace CS4750HW6
         //Fields
 
         //Properties
-        private Node[,] Board { get; set; }
+        public Node[,] Board { get; set; }
         private List<Square> Squares { get; set; }
         private List<Row> Rows { get; set; }
         private List<Column> Columns { get; set; }
@@ -22,6 +22,10 @@ namespace CS4750HW6
         private int Turn { get; set; }
         private int ActualTurns { get; set; }
 
+        public Node[,] GetBoard()
+        {
+            return Board;
+        }
         /***************CONSTRUCTOR***************/
         public GameBoard(int[,] board)
         {
