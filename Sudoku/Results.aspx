@@ -49,7 +49,7 @@
             {
                 for(int j = 0; j < 9; j++)
                 {
-                    solved_puzzle[i, j] = puzz[i, j].Value;
+                    solved_puzzle[i, j] = puzz[j, i].Value;
                 }
             }
         }
