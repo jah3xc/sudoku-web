@@ -71,13 +71,15 @@
         </div>
     <% } else { %>
         The solution is:
-        <table class="custom-table">
-            <% for (int i = 0; i < 9; i++)
-                      { %>
+        <table class="custom-table" style="border: solid 5px">
+            <% string border1 = "";
+                string border2 = "";
+                for (int i = 0; i < 9; i++)
+                { if (i == 3 || i == 6) { border1 = "border-top:solid 5px;"; } else { border1 = ""; }%>
             <tr>
                 <% for (int j = 0; j < 9; j++)
-                      { %>
-                    <td class="text-center" style="font-size:16px;"><%=(solved_puzzle[i, j]) %></td>
+                      { if (j == 2 || j == 5) { border2 = "border-right:solid 5px;"; } else { border2 = ""; }%>
+                    <td class="text-center" style="font-size:16px;<%=border1 + border2 %>"><%=(solved_puzzle[i, j]) %></td>
                 <%} %>
             </tr>
             <% } %>
