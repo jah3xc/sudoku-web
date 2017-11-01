@@ -2,7 +2,7 @@
 <script runat="server">
     protected bool noloadedpuzzle = false;
     int[,] puzzle = new int[9, 9];
-
+    bool swap = false;
     int[,] solved_puzzle = new int[9, 9];
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -15,6 +15,7 @@
         }
         else if(Session["stored_puzzle"] != null)
         {
+            swap = true;
             CS4750HW6.Form1 stored = new CS4750HW6.Form1();
             int i = Convert.ToInt32(Session["stored_puzzle"]);
             i++;
@@ -79,7 +80,7 @@
             <tr>
                 <% for (int j = 0; j < 9; j++)
                       { if (j == 2 || j == 5) { border2 = "border-right:solid 5px;"; } else { border2 = ""; }%>
-                    <td class="text-center" style="font-size:16px;<%=border1 + border2 %>"><%=(solved_puzzle[i, j]) %></td>
+                    <td class="text-center" style="font-size:16px;<%=border1 + border2 %>"><%=(swap ? solved_puzzle[i, j] : solved_puzzle[j,i]) %></td>
                 <%} %>
             </tr>
             <% } %>

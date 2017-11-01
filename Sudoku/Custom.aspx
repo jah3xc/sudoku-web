@@ -14,7 +14,7 @@
             {
                 isempty = false;
                 String columnStr = Request.Params[num].ToString();
-                String[] columnArr = columnStr.Split(new char[',']);
+                String[] columnArr = columnStr.Split(',');
                 for (var j = 0; j < 9; j++)
                 {
                     try
