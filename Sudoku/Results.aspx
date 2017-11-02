@@ -4,6 +4,7 @@
     int[,] puzzle = new int[9, 9];
     bool swap = false;
     int[,] solved_puzzle = new int[9, 9];
+    string time;
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -40,11 +41,25 @@
 
         if(!noloadedpuzzle)
         {
+            System.Diagnostics.Stopwatch stopWatch = new  System.Diagnostics.Stopwatch();
+            stopWatch.Start();
+        
+        
+
             CS4750HW6.GameBoard gb = new CS4750HW6.GameBoard(puzzle);
             while (!gb.isGoalState())
             {
                 gb.backtrackingSearch();
             } //End while (!this.Board1.isGoalState())
+
+            stopWatch.Stop();
+            // Get the elapsed time as a TimeSpan value.
+            TimeSpan ts = stopWatch.Elapsed;
+
+            // Format and display the TimeSpan value.
+            time = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+                ts.Hours, ts.Minutes, ts.Seconds,
+                ts.Milliseconds / 10);
             CS4750HW6.Node[,] puzz = gb.Board;
             for (int i =0; i < 9; i++)
             {
@@ -85,6 +100,9 @@
             </tr>
             <% } %>
         </table>
+        <div class="col-md-offset-4 col-md-4 text-center">
+            Time: <%=time %>
+        </div>
 
     <% } %>
 </div>
