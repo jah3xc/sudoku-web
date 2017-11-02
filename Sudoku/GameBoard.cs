@@ -21,8 +21,8 @@ namespace CS4750HW6
         private List<int> GuessedTurns { get; set; }
         private int Turn { get; set; }
         private int ActualTurns { get; set; }
-        public List<int> InitMoves { get; set; }
-
+        public List<Node> InitMoves { get; set; }
+        public List<int> DomainMoves { get; set; }
         public Node[,] GetBoard()
         {
             return Board;
@@ -35,8 +35,8 @@ namespace CS4750HW6
             initNodes();
 
             this.Moves = new List<Move>();
-            this.InitMoves = new List<int>();
-
+            this.InitMoves = new List<Node>();
+            this.DomainMoves = new List<int>();
             this.Turn = 0;
             this.GuessedTurns = new List<int>();
 
@@ -61,7 +61,7 @@ namespace CS4750HW6
                 if (isValidPosition(nodeChosen))
                 {
                     node = this.Board[nodeChosen.X, nodeChosen.Y];
-
+                    InitMoves.Add(node);
                     if (node.Position.X == 0 || node.Position.Y == 8 || node.SquareID == 6)
                     {
                         if (node.Position.X == 0 && node.Position.Y == 8)
@@ -221,7 +221,7 @@ namespace CS4750HW6
             int valBeingPlaced = 0;
             Move move = null;
             int m = chosenVar.Domain.Count;
-            InitMoves.Add(m);
+            DomainMoves.Add(m);
             if (chosenVar.Domain.Count == 0)
             {
                 ///BAD CHOICES WERE MADE!

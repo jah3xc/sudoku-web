@@ -109,11 +109,12 @@
             <% for (int i = 0; i < gb.InitMoves.Count; i++)
                 {
                     if (i > 2) { break; }
-                    CS4750HW6.Move m = gb.Moves[i];
+                    
                     %>
                 <b>Move <%=i+1 %></b><br />
-                Variable Selected: (<%=m.Node.Position.X %>, <%=m.Node.Position.Y %>)<br />
-                Domain Size: <%=gb.InitMoves[i] %><br />
+                Variable Selected: (<%=gb.InitMoves[i].Position.X %>, <%=gb.InitMoves[i].Position.Y %>)<br />
+                Domain Size: <%=gb.DomainMoves[i] %><br />
+                Degree: <%=gb.InitMoves[i].Constraints.Count %><br />
                 
                 
             <% } %>
