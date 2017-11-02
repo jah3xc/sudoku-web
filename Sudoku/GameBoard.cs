@@ -17,10 +17,11 @@ namespace CS4750HW6
         private List<Square> Squares { get; set; }
         private List<Row> Rows { get; set; }
         private List<Column> Columns { get; set; }
-        private List<Move> Moves { get; set; }
+        public List<Move> Moves { get; set; }
         private List<int> GuessedTurns { get; set; }
         private int Turn { get; set; }
         private int ActualTurns { get; set; }
+        public List<int> InitMoves { get; set; }
 
         public Node[,] GetBoard()
         {
@@ -34,6 +35,7 @@ namespace CS4750HW6
             initNodes();
 
             this.Moves = new List<Move>();
+            this.InitMoves = new List<int>();
 
             this.Turn = 0;
             this.GuessedTurns = new List<int>();
@@ -218,7 +220,8 @@ namespace CS4750HW6
             bool returnVal = false;
             int valBeingPlaced = 0;
             Move move = null;
-
+            int m = chosenVar.Domain.Count;
+            InitMoves.Add(m);
             if (chosenVar.Domain.Count == 0)
             {
                 ///BAD CHOICES WERE MADE!
@@ -239,7 +242,6 @@ namespace CS4750HW6
                 {
                     move = new Move(this.Turn, chosenVar, valBeingPlaced, false);
                     this.Moves.Insert(0, move);
-
                     this.Rows[chosenVar.RowID].PlacedVals.Add(valBeingPlaced);
                     this.Columns[chosenVar.ColID].PlacedVals.Add(valBeingPlaced);
                     this.Squares[chosenVar.SquareID].PlacedVals.Add(valBeingPlaced);

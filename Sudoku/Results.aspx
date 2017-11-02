@@ -4,6 +4,8 @@
     int[,] puzzle = new int[9, 9];
     bool swap = false;
     int[,] solved_puzzle = new int[9, 9];
+    CS4750HW6.GameBoard gb = null;
+
     string time;
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -46,7 +48,7 @@
         
         
 
-            CS4750HW6.GameBoard gb = new CS4750HW6.GameBoard(puzzle);
+            gb = new CS4750HW6.GameBoard(puzzle);
             while (!gb.isGoalState())
             {
                 gb.backtrackingSearch();
@@ -86,8 +88,9 @@
             </div>
         </div>
     <% } else { %>
-        The solution is:
-        <table class="custom-table" style="border: solid 5px">
+        
+        <div class="col-md-9">
+        <table class="custom-table" style="margin-right:0;border: solid 5px">
             <% string border1 = "";
                 string border2 = "";
                 for (int i = 0; i < 9; i++)
@@ -100,8 +103,20 @@
             </tr>
             <% } %>
         </table>
-        <div class="col-md-offset-4 col-md-4 text-center">
-            Time: <%=time %>
+        </div>
+        <div class="col-md-3">
+            <b>Time:</b><br /> <%=time %><br />
+            <% for (int i = 0; i < gb.InitMoves.Count; i++)
+                {
+                    if (i > 2) { break; }
+                    CS4750HW6.Move m = gb.Moves[i];
+                    %>
+                <b>Move <%=i+1 %></b><br />
+                Variable Selected: (<%=m.Node.Position.X %>, <%=m.Node.Position.Y %>)<br />
+                Domain Size: <%=gb.InitMoves[i] %><br />
+                
+                
+            <% } %>
         </div>
 
     <% } %>
